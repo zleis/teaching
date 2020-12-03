@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php 
+<?php
 	require_once $_SERVER['DOCUMENT_ROOT']."/teaching/config.php";
 ?>
 <head>
@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 	<title></title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo CSS;?>login.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo URL_CSS;?>login.css">
 </head>
 <body>
 <div class="p-body-container" id="jp-bg" style="">
