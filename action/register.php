@@ -1,30 +1,27 @@
 <?php
-header('Access-Control-Allow-Origin:*');
+	header('Access-Control-Allow-Origin:*');
 
-require_once $_SERVER['DOCUMENT_ROOT']."/teaching/config.php";
-require_once SERVER_ROOT."global/globalVar.php";
-require_once SERVER_ROOT."sql/sqlFun.php";
-$resJson = array();
-if(isset($userPower[$_SESSION['power']]['userAdd']) && $userPower[$_SESSION['power']]['userAdd']['isHave']){
+	require_once $_SERVER['DOCUMENT_ROOT']."/teaching/config.php";
+	require_once DIR_GLOBAL."verbal.php";
+	require_once DIR_SQL."db_handler.php";
+	require_once DIR_MODELS."user.php";
+	require_once DIR_MODELS."menu.php";
+
+
 	$uid = $_POST['uid'];
 	$pass = $_POST['pass'];
 	$nickName = urldecode($_POST['nickName']);
-	$power = $_POST['power'];
-	if(!isset($uid) || !isset($pass) || !isset($nickName) || !isset($power)){
-		$resJson['feedback'] = PARAM_LACK;
-	}else{
-		$resJson['feedback'] = REQUST_SUCC;
-		if(isHasUser($uid)){
-			$resJson['feedback'] = USER_EXIT;
-		}else{
-			addUser($uid, $pass, $nickName, $power);
-			// insertArticle($aid, $menu, $subMenu, $type, $title, $time, $source, $content);
-		}
+	if(!isset($uid) || !isset($pass)) {
+		die(GetDieError("PARAM_LACK"));
 	}
-}else{
-	$resJson['feedback'] = NO_POWER;
-}
 
+	$user = new User;
+	$db = new DBHandler;
 
+	$dbUser = $db -> GetUser($user);
+	if ($dbUser -> row_nums > 0) {
+		die(GetDieError("UID_EXITED"));
+	}
 
-echo json_encode($resJson);
+	$db -> AddUser($user);
+	die(GetDieError("REQUST_SUCC"));

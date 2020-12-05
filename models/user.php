@@ -14,7 +14,7 @@
 		}
 	}
 
-	function transUserModel($res) {
+	function TransUserModel($res) {
 		$users = array();
 		$idx = 0;
 		while ($row = $res -> fetch_assoc()) {

@@ -4,15 +4,17 @@
   require_once DIR_SQL."db_handler.php";
   require_once DIR_MODELS."user.php";
   require_once DIR_MODELS."menu.php";
+  require_once DIR_GLOBAL."func.php";
 
-
-  $db = new DBHandler;
-  // 测试用户
-  $user = new User;
-  $user -> Uid = "12234";
-  $user -> Pass = "123";
-  $user -> Name = "张磊";
-  $user -> Level = 10;
+  var_dump(GetDieError("REQUST_SUCC"));
+  var_dump(GetDieError("REQUST_SUCC11"));
+  // $db = new DBHandler;
+  // // 测试用户
+  // $user = new User;
+  // $user -> Uid = "12234";
+  // $user -> Pass = "123";
+  // $user -> Name = "张磊";
+  // $user -> Level = 10;
   // // 注册用户
   // $db -> AddUser($user);
   // echo "<br>";
@@ -59,16 +61,16 @@
   // var_dump($m);
 
   // echo $db -> GetMenuCount();
-
-  $article = new Article;
-  $article -> Title = "文章标题";
-  $article -> Content = "asdfasdfasdf";
-  $article -> CreatorID = "asdfasdf";
-  $article -> ID = 1;
-  $article -> ReadCount = 10;
-  $article -> Image = "asdfasdfasasdfasdfasdfasdfasdfasdfsda";
-  // $db -> UpdateArticle($article);
-  $res = $db -> GetArticle($article);
-  var_dump(transArticleModel($res));
-  echo $db -> GetArticleCount();
-  // $db -> AddArticle($article);
+  //
+  // $article = new Article;
+  // $article -> Title = "文章标题";
+  // $article -> Content = "asdfasdfasdf";
+  // $article -> CreatorID = "asdfasdf";
+  // $article -> ID = 1;
+  // $article -> ReadCount = 10;
+  // $article -> Image = "asdfasdfasasdfasdfasdfasdfasdfasdfsda";
+  // // $db -> UpdateArticle($article);
+  // $res = $db -> GetArticle($article);
+  // var_dump(transArticleModel($res));
+  // echo $db -> GetArticleCount();
+  // // $db -> AddArticle($article);

@@ -15,23 +15,21 @@
 
   $uidPar = '/^[a-zA-Z0-9]+$/';
   if(!preg_match($uidPar, $user -> Uid)){
-    $resJson['feedback'] = LOGIN_ERROR;
-  } else {
-    $db = new DBHandler;
-    $dbUser = $db -> GetUser($user);
-    if (count($dbUser) > 0) {
-      $resJson['feedback'] = LOGIN_ERROR;
-    } else {
-      if ($user -> Pass == $dbUser[0] -> Pass) {
-        $_SESSION['uid'] = $dbUser[0] -> Uid;
-        $_SESSION['power'] = $dbUser[0] -> Power;
-        $_SESSION['name'] = $dbUser[0] -> Name;
-        $_SESSION['status'] = 1;
-        $resJson['feedback'] = REQUST_SUCC;
-      }else{
-        $resJson['feedback'] = LOGIN_ERROR;
-      }
-    }
+    die(GetDieError("ACCOUNT_ERROR"));
   }
 
-  echo json_encode($resJson);
+  $db = new DBHandler;
+  $dbUser = $db -> GetUser($user);
+  if (count($dbUser) == 0) {
+    die(GetDieError("ACCOUNT_ERROR"));
+  }
+
+  if ($user -> Pass == $dbUser[0] -> Pass) {
+    $_SESSION['uid'] = $dbUser[0] -> Uid;
+    $_SESSION['power'] = $dbUser[0] -> Power;
+    $_SESSION['name'] = $dbUser[0] -> Name;
+    $_SESSION['status'] = 1;
+    die(GetDieError("REQUST_SUCC"));
+  }
+
+  die(GetDieError("PASS_ERROR"));

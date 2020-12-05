@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-    require_once $_SERVER['DOCUMENT_ROOT']."/teaching/config.php"; 
+    require_once $_SERVER['DOCUMENT_ROOT']."/teaching/config.php";
 
     // print_r($conf_db)
     // 连接 mysql

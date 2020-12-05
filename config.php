@@ -14,7 +14,9 @@
 
 	$conf_db = parse_ini_file(DIR_CONFIG."sql.ini");
   $power_string = file_get_contents(DIR_CONFIG.'power.json');
+	$error_string = file_get_contents(DIR_CONFIG.'error.json');
 	$powerJson = json_decode($power_string, true);
+	$errorCode = json_decode($error_string, true);
 	$userPower = $powerJson['power'];
 
 

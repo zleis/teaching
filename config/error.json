@@ -1,0 +1,50 @@
+{
+  "REQUST_SUCC":{
+    "code": 10000,
+    "msg":"请求正确"
+  },
+
+  "PARAM_LACK":{
+    "code": 10100,
+    "msg":"参数不足"
+  },
+  "PARAM_ERROR":{
+    "code": 10101,
+    "msg":"参数错误"
+  },
+
+  "LOGIN_ERROR":{
+    "code":  20100,
+    "msg":"登录错误"
+  },
+  "ACCOUNT_ERROR":{
+    "code": 20101,
+    "msg":"账户不存在"
+  },
+  "PASS_ERROR":{
+    "code":20102,
+    "msg":"密码错误"
+  },
+  "UID_EXITED":{
+    "code": 20200,
+    "msg":"账号已注册"
+  },
+  "REGISTER_ERROR":{
+    "code": 20201,
+    "msg":"账号注册失败"
+  },
+  "WITHOUT_LOGIN":{
+    "code":  20300,
+    "msg":"用户未登录"
+  },
+  "NO_POWER":{
+    "code": 20400,
+    "msg":"用户没权限"
+  },
+
+  "ARTICLE_NOT_EXIT":{
+    "code":30001,
+    "msg":"文章不存在"
+  }
+
+}

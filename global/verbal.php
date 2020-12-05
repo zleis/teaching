@@ -11,11 +11,13 @@
 
   // 用户相关错误
   define("LOGIN_ERROR",  20100);	// 登录错误
+  define("ACCOUNT_ERROR", 20101); // 账户错误
   define("UID_EXITED", 20200); // 账号已注册
   define("REGISTER_ERROR", 20201); // 账号注册失败
   define("WITHOUT_LOGIN",  20300); // 用户未登录
   define("NO_POWER", 20400); // 用户没权限
   define("LOGIN_ERROR_MSG",  "登录错误");	// 登录错误
+  define("ACCOUNT_ERROR_MSG", "账户错误"); // 账户错误
   define("UID_EXITED_MSG", "账号已注册"); // 账号已注册
   define("REGISTER_ERROR_MSG", "账号注册失败"); // 账号注册失败
   define("WITHOUT_LOGIN_MSG",  "用户未登录"); // 用户未登录
